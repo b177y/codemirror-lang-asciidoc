@@ -1,7 +1,7 @@
 import {Prec} from "@codemirror/state"
 import {KeyBinding, keymap} from "@codemirror/view"
 import {Language, LanguageSupport, LanguageDescription} from "@codemirror/language"
-import {MarkdownExtension, MarkdownParser, parseCode} from "@lezer/markdown"
+import {MarkdownExtension, MarkdownParser, parseCode} from "@b177y/lezer-asciidoc"
 import {html} from "@codemirror/lang-html"
 import {commonmarkLanguage, markdownLanguage, mkLang, getCodeParser} from "./markdown"
 import {insertNewlineContinueMarkup, deleteMarkupBackward} from "./commands"

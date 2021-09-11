@@ -1,0 +1,16 @@
+= codemirror-lang-asciidoc
+
+This package implements Asciidoc language support for the
+[CodeMirror](https://codemirror.net/6/) code editor.
+
+The [project page](https://codemirror.net/6/) has more information, a
+number of [examples](https://codemirror.net/6/examples/) and the
+[documentation](https://codemirror.net/6/docs/).
+
+This code is released under an
+link:https://github.com/b177y/codemirror-lang-asciidoc/tree/main/LICENSE[MIT license].
+
+We aim to be an inclusive, welcoming community. To make that explicit,
+we have a
+link:http://contributor-covenant.org/version/1/1/0/[code of conduct]
+that applies to communication around the project.

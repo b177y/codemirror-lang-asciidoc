@@ -1,7 +1,7 @@
 import {Language, defineLanguageFacet, languageDataProp, foldNodeProp, indentNodeProp,
         LanguageDescription, ParseContext} from "@codemirror/language"
 import {styleTags, tags as t} from "@codemirror/highlight"
-import {parser as baseParser, MarkdownParser, GFM, Subscript, Superscript, Emoji} from "@lezer/markdown"
+import {parser as baseParser, MarkdownParser, GFM, Subscript, Superscript, Emoji} from "@b177y/lezer-asciidoc"
 
 const data = defineLanguageFacet({block: {open: "<!--", close: "-->"}})
 
