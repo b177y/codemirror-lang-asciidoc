@@ -1,7 +1,7 @@
 import {Prec} from "@codemirror/state"
 import {KeyBinding, keymap} from "@codemirror/view"
 import {Language, LanguageSupport, LanguageDescription} from "@codemirror/language"
-import {MarkdownExtension, MarkdownParser, parseCode} from "@b177y/lezer-asciidoc"
+import {AsciidocExtension, AsciidocParser, parseCode} from "@b177y/lezer-asciidoc"
 import {html} from "@codemirror/lang-html"
 import {commonmarkLanguage, markdownLanguage, mkLang, getCodeParser} from "./markdown"
 import {insertNewlineContinueMarkup, deleteMarkupBackward} from "./commands"
@@ -34,13 +34,13 @@ export function markdown(config: {
   /// Markdown parser
   /// [extensions](https://github.com/lezer-parser/markdown#user-content-markdownextension)
   /// to add to the parser.
-  extensions?: MarkdownExtension,
+  extensions?: AsciidocExtension,
   /// The base language to use. Defaults to
   /// [`commonmarkLanguage`](#lang-markdown.commonmarkLanguage).
   base?: Language
 } = {}) {
   let {codeLanguages, defaultCodeLanguage, addKeymap = true, base: {parser} = commonmarkLanguage} = config
-  if (!(parser instanceof MarkdownParser)) throw new RangeError("Base parser provided to `markdown` should be a Markdown parser")
+  if (!(parser instanceof AsciidocParser)) throw new RangeError("Base parser provided to `asciidoc` should be a Asciidoc parser")
   let extensions = config.extensions ? [config.extensions] : []
   let support = [htmlNoMatch.support], defaultCode
   if (defaultCodeLanguage instanceof LanguageSupport) {
@@ -50,7 +50,7 @@ export function markdown(config: {
     defaultCode = defaultCodeLanguage
   }
   let codeParser = codeLanguages || defaultCode ? getCodeParser(codeLanguages || [], defaultCode) : undefined
-  extensions.push(parseCode({codeParser, htmlParser: htmlNoMatch.language.parser}))
+  extensions.push(parseCode({codeParser}))
   if (addKeymap) support.push(Prec.extend(keymap.of(markdownKeymap)))
   return new LanguageSupport(mkLang(parser.configure(extensions)), support)
 }
