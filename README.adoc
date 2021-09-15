@@ -2,6 +2,9 @@
 
 This package implements Asciidoc language support for the
 link:https://codemirror.net/6/[CodeMirror] code editor.
+This is currently a work in progress as it relies on
+link:https://github.com/b177y/lezer-asciidoc[lezer-asciidoc]
+which is under development.
 
 The link:https://codemirror.net/6/[project page] has more information, a
 number of link:https://codemirror.net/6/examples/[examples] and the
